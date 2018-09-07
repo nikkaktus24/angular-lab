@@ -1,0 +1,10 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+.item {
+    @include flexbox(column, space-around, center);
+    width: 300px;
+    height: 300px;
+    background-color: $header-color;
+    margin-top: 30px;
+}

@@ -1,0 +1,42 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+.left-hr {
+    @extend %hr-style;
+
+    &:after {
+       @extend %pseudo-hr-style; 
+       margin-left: 35px;
+    }
+}
+
+.right-hr {
+    @extend %hr-style;
+
+    &:before {
+       @extend %pseudo-hr-style; 
+       margin-right: 35px;
+    }
+}
+
+.items-wrapper {
+    @include flexbox(row, space-around, flex-start);
+    width: 80%;
+    margin: 50px auto 70px;
+}
+
+%hr-style {
+    @include flexbox(row, center, center);
+    font-size: 15px;
+    color: $grey-font-color;
+    width: 1000px;
+    height: 10px;
+    margin: 20px auto 50px;
+}
+
+%pseudo-hr-style {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+}

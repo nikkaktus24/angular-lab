@@ -1,0 +1,80 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+
+.dashboard {
+    @extend %flex;
+    width: 1000px;
+
+    &-checkboxs {
+        @extend %flex;
+        width: 300px;
+    }
+}
+
+.container {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 13px;
+}
+  
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.checkmark {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+  
+.container input:checked ~ .checkmark {
+    border-color: $catalog-brown;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 3px;
+    height: 7px;
+    border: 2px solid $catalog-brown;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.dashboard-button {
+    padding: 10px 15px;
+    background-color: $catalog-brown;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+%flex {
+    @include flexbox(row, space-between, center);
+}

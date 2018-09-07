@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Quicksandbold';
+    src: url('./fonts/quicksand-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button {
+    font-family: 'Quicksandbold';
+    text-transform: uppercase;
+}
+
+button {
+    border: none;
+    &:focus {
+        outline: none; 
+    }
+    &:active {
+        transform: scale(0.99);
+    }
+}

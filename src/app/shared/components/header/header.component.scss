@@ -1,0 +1,19 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+%flex {
+    @include flexbox(row, center, center);
+}
+
+.header {
+    @extend %flex;
+    width: 100%;
+    height: 100px;
+    background-color: $header-color;
+
+    &-block {
+        @extend %flex;
+        width: 1000px;
+        height: 100%;        
+    }
+}
