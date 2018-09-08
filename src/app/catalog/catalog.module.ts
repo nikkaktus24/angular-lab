@@ -6,7 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { SortComponent } from './components/sort/sort.component';
 import { ItemComponent } from './components/item/item.component';
-import { dashBoardReducer } from '../shared/store/reducers/dashboard';
+import { dashBoardReducer } from '../shared/store/reducers';
 
 @NgModule({
   imports: [

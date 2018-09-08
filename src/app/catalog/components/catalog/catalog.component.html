@@ -2,20 +2,22 @@
   <app-dashboard></app-dashboard>
 </app-header>
 <app-sort></app-sort>
-<div class="left-hr">Men</div>
-<div class="items-wrapper">
+<div *ngIf="man" class="left-hr">Men</div>
+<div *ngIf="man" class="items-wrapper">
+    <app-item></app-item>
+    <div *ngFor="let item of manItems">
+        <div>{{item.name}}</div>
+        <div>{{item.price}}</div>
+    </div>
+</div>
+<div *ngIf="woman" class="right-hr">Women</div>
+<div *ngIf="woman" class="items-wrapper">
     <app-item></app-item>
     <app-item></app-item>
     <app-item></app-item>
 </div>
-<div class="right-hr">Women</div>
-<div class="items-wrapper">
-    <app-item></app-item>
-    <app-item></app-item>
-    <app-item></app-item>
-</div>
-<div class="left-hr">Children</div>
-<div class="items-wrapper">
+<div *ngIf="children"class="left-hr">Children</div>
+<div *ngIf="children" class="items-wrapper">
     <app-item></app-item>
     <app-item></app-item>
     <app-item></app-item>

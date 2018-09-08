@@ -14,7 +14,8 @@ export class DashboardComponent implements OnInit {
   @Input() woman;
   @Input() children;
 
-  constructor(private store: Store<IDashBoardState>,
+  constructor (
+    private store: Store<IDashBoardState>,
     private dashBoardActions:  DashBoardActions,
   ) {
     this.man = store.select('man');

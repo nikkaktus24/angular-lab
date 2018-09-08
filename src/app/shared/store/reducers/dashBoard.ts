@@ -1,18 +1,16 @@
-
 import { ICheckBoxsState } from '../../models';
 import { DASHBOARD } from '../constants';
 
 const defaultState: ICheckBoxsState = { man: true, woman: true, children: true };
 
 export function dashBoardReducer(state: ICheckBoxsState = defaultState, action: any): any {
-     switch (action.type) {
+    switch (action.type) {
         case DASHBOARD.TOGGLE:
             return {
                 ...state,
                 ...action.payload
             };
         case DASHBOARD.CHECKALL:
-            console.log(state);
             return {
                 ...state,
                 man: true,
