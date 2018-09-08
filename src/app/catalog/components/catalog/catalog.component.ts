@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+// import { Store } from '@ngrx/store';
+// import { IDashBoardState } from '../../../shared/models';
 import { DataService } from '../../services/data-loader/data-loader.service';
 import Item from '../../services/data-loader/item';
 
@@ -9,8 +11,10 @@ import Item from '../../services/data-loader/item';
   providers: [DataService],
 })
 export class CatalogComponent implements OnInit {
-
-  constructor(private dataService: DataService) { }
+  @Input() woman;
+  constructor(
+    private dataService: DataService
+  ) {}
   items: Item[] = [];
   ngOnInit() {
     this.items = this.dataService.getData();

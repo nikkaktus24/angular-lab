@@ -3,25 +3,32 @@
       <div class="dashboard">
           <div class="dashboard-checkboxs">
               <label class="container">
-                  <input type="checkbox" name="man"
-                  value="man" checked />
+                  <input type="checkbox" #men name="man"
+                  (click)="toggle({man: men.checked})"
+                  value="Man" [checked]="man" />
                   <span class="checkmark"></span>
                   Man
               </label>
               <label class="container">
-                  <input type="checkbox" name="Women"
-                  value="Women" checked />
+                  <input type="checkbox" #women name="woman"
+                  (click)="toggle({woman: women.checked})"
+                  value="Women" [checked]="woman" />
                   <span class="checkmark"></span>
                   Women
               </label>
               <label class="container">
-                  <input type="checkbox" name="children"
-                  value="children" checked />
+                  <input type="checkbox" #child name="children"
+                  (click)="toggle({children: child.checked})"
+                  value="Children" [checked]="children" />
                   <span class="checkmark"></span>
                   Children
               </label>
           </div>
-          <button class="dashboard-button">See all products</button>
+          <button 
+            (click)="checkAll()"
+            class="dashboard-button">
+            See all products
+          </button>
       </div>
   </ng-container>
 </app-header>
