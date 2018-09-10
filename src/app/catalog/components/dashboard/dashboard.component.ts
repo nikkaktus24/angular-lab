@@ -17,11 +17,7 @@ export class DashboardComponent implements OnInit {
   constructor (
     private store: Store<IDashBoardState>,
     private dashBoardActions:  DashBoardActions,
-  ) {
-    this.man = store.select('man');
-    this.woman = store.select('woman');
-    this.children = store.select('children');
-   }
+  ) { }
 
   public toggle(payload: any): void {
     this.store.dispatch(this.dashBoardActions.toggle(payload));

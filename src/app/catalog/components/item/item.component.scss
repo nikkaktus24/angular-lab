@@ -1,10 +1,55 @@
 @import '../../../../styles/mixins';
 @import '../../../../styles/variables';
+@import '../../../../styles/common';
 
 .item {
-    @include flexbox(column, space-around, center);
+    @include flexbox(column, space-between, center);
     width: 300px;
-    height: 300px;
+    height: 400px;
     background-color: $header-color;
     margin-top: 30px;
+    border: 3px solid transparent;
+    transition: border-color 0.3s linear, border-radius 0.6s;
+
+    &:hover {
+        border-color: $catalog-brown;
+        border-radius: 5px;
+    }
+
+    &-header {
+        @extend %item-style;
+        
+        input[type=radio] {
+            outline: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50px;
+            cursor: pointer;     
+            margin-right: 7px;
+
+        }
+
+        select {
+                @extend %select;
+        }
+
+    }
+
+    &-footer {
+        @extend %item-style;
+
+        .price:after {
+            content: "€";
+        }
+    }
+
+}
+
+%item-style {
+    @include flexbox(row, space-between, flex-start);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 20px 15px;
 }

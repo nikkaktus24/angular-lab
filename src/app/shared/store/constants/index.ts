@@ -1,2 +1,3 @@
 export * from './dashboard';
-export * from './catalog';
+export * from './sort';
+export * from './items';

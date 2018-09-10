@@ -1,13 +1,22 @@
 <div class="item">
-    <header>
-        <select>
-            <option>fdsfsd</option>
+    <header class="item-header">
+        <select *ngIf="size.map">
+            <option value="">size</option>
+            <option *ngFor="let item of size">{{item}}</option>
         </select>
-        <div></div>
+        <h4 *ngIf="!size.map">{{size}}</h4>
+        <form *ngIf="colors">
+            <input *ngFor="let item of colors; let isFirst = first" [ngStyle]="{'background-color': item}" type="radio" name="drone" [checked]="isFirst" />
+        </form>
     </header>
-    <main>fdsfsd</main>
-    <footer>
-      <h4>title</h4>
-      <div class="price">price</div>
+    <main>
+        <img *ngIf="!images.map" src="{{images}}" alt="{{name}}" />
+        <div *ngIf="images.map">
+            <img *ngFor="let item of images;" src="{{item}}" alt="{{name}}" /> 
+        </div> 
+    </main>
+    <footer class="item-footer">
+        <h4>{{name}}</h4>
+        <div class="price">{{price}}</div>
     </footer>
-  </div>
+</div>

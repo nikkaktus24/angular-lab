@@ -2,10 +2,8 @@
   <div class="sort-title">
     <h3>Sort by</h3>
   </div>
-  <div class="sort-points">
-    <select>
+    <select #item (change)="change(item.value)">
       <option value="price">Price</option>
       <option value="name">Name</option>
     </select>
-  </div>
 </div>

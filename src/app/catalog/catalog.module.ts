@@ -6,12 +6,12 @@ import { StoreModule } from '@ngrx/store';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { SortComponent } from './components/sort/sort.component';
 import { ItemComponent } from './components/item/item.component';
-import { dashBoardReducer } from '../shared/store/reducers';
+import { dashBoardReducer, sortReducer } from '../shared/store/reducers';
 
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forRoot({ dashBoard: dashBoardReducer }),
+    StoreModule.forRoot({ sort: sortReducer, dashBoard: dashBoardReducer }),
     SharedModule
   ],
   declarations: [

@@ -1,2 +1,2 @@
 export * from './dashBoard';
-export * from './catalog';
+export * from './sort';
