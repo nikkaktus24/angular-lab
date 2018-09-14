@@ -9,7 +9,7 @@ import { LogoComponent } from './components/logo/logo.component';
   ],
   declarations: [
     HeaderComponent,
-    LogoComponent
+    LogoComponent,
   ],
   exports: [
     HeaderComponent,

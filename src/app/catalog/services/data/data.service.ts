@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Item } from '../../../shared/models/';
+import { Item } from '../../../core/models/';
+import { data } from './resources/data';
+
+const COUNT_ITEMS = 3;
 
 @Injectable({
     providedIn: 'root'
 })
 export class DataService {
-    private data: Item[] = [
-        { name: 'With Color', sex: 'man', size: 'fdsfsd', price: 60, colors: ["green", "yellow"], images: 'src/app/catalog/services/data/resources/images/1.png'},
-        { name: 'woman', sex: 'woman', size: ['M', 'S'], price: 3, colors: null, images: 'src/app/catalog/services/data/resources/images/1.png'},
-        { name: 'woman', sex: 'woman', size: ['M', 'S'], price: 3, colors: null, images: 'src/app/catalog/services/data/resources/images/1.png'},
-        { name: 'Z', sex: 'man', size: ['M', 'S'], price: 2, colors: null, images: 'src/app/catalog/services/data/resources/images/1.png'},
-        { name: 'X', sex: 'man', size: ['M', 'S'], price: 3, colors: null, images: 'src/app/catalog/services/data/resources/images/1.png'},
-        { name: 'D', sex: 'man', size: ['M', 'S'], price: 4, colors: null, images: 'src/app/catalog/services/data/resources/images/1.png'},
-        { name: 'E', sex: 'man', size: ['M', 'S'], price: 5, colors: null, images: 'src/app/catalog/services/data/resources/images/1.png'},
-    ];
+    private data: Item[] = data;
 
     getData(): Item[] {
         return this.data;
     }
 
-    getNormilizeData(sex: string, sortKey: string, page: number): Item[] {
-        return this.data
+    normalizeData(items: Item[], sex: string, sortKey: string, page: number): Item[] | any[] {
+        return items
         .filter((item: any) => {
             return item.sex === sex;
         })
@@ -29,8 +24,8 @@ export class DataService {
             if (left[sortKey] < right[sortKey]) return -1;
         })
         .filter((item: any, i: number, array: Item[]) => {
-            const limit = 3 * page;
-            if (i >= limit - 3 && i < limit) return true;
+            const limit = COUNT_ITEMS * page;
+            if (i >= limit - COUNT_ITEMS && i < limit) return true;
         });
     }
 

@@ -5,14 +5,21 @@
             <option *ngFor="let item of size">{{item}}</option>
         </select>
         <h4 *ngIf="!size.map">{{size}}</h4>
-        <form *ngIf="colors">
-            <input *ngFor="let item of colors; let isFirst = first" [ngStyle]="{'background-color': item}" type="radio" name="drone" [checked]="isFirst" />
+        <form [formGroup]="form" *ngIf="recources.map">
+            <input 
+                *ngFor="let item of recources; let isFirst = first"
+                [value]="item.color"
+                [ngStyle]="{'background-color': item.color}"
+                formControlName="color"
+                type="radio" />
         </form>
     </header>
     <main>
-        <img *ngIf="!images.map" src="{{images}}" alt="{{name}}" />
-        <div *ngIf="images.map">
-            <img *ngFor="let item of images;" src="{{item}}" alt="{{name}}" /> 
+        <img *ngIf="!recources.map" [src]="recources.url" alt="{{recources.color}}" />
+        <div *ngIf="recources.map">
+            <div *ngFor="let item of recources;">
+                <img *ngIf="form.value.color === item.color" [src]="item.url" alt="{{item.color}}" /> 
+            </div>
         </div> 
     </main>
     <footer class="item-footer">

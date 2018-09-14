@@ -4,11 +4,10 @@ export class Item {
         public sex: string,
         public size: any[] | string,
         public price: number,
-        public images: string[] | string,
-        public colors: string[] | null,
+        public recources: any,
     ) { }
 }
 
 export interface IItemsState {
-    items: Item[];
+    catalog: Item[];
 }

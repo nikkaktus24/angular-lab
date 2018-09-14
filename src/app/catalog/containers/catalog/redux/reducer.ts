@@ -1,9 +1,10 @@
-import { Item } from '../../models';
-import { ITEMS } from '../constants';
+import { Item } from '../../../../core/models';
+import { ITEMS } from './constants';
+import { PutItems } from './actions';
 
 const defaultState: Item[] = [];
 
-export function dashBoardReducer(state: Item[] = defaultState, action: any): any {
+export function itemsReducer(state = defaultState, action: PutItems): any {
     switch (action.type) {
         case ITEMS.PUT:
             return {

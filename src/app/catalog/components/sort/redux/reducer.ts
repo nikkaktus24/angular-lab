@@ -1,5 +1,5 @@
-import { ISortKey } from '../../models';
-import { SORT } from '../constants';
+import { ISortKey } from '../../../../core/models';
+import { SORT } from './constants';
 
 const defaultState: ISortKey = { key: 'price' };
 

@@ -1,29 +1,15 @@
 <app-header>
   <ng-container>
       <div class="dashboard">
-          <div class="dashboard-checkboxs">
-              <label class="container">
-                  <input type="checkbox" #men name="man"
-                  (click)="toggle({man: men.checked})"
-                  value="Man" [checked]="man" />
+        <form [formGroup]="form" class="dashboard-checkBoxes">
+              <label formArrayName="checkBoxes" *ngFor="let checkBox of form.controls.checkBoxes.controls; let i = index" class="container">
+                  <input type="checkbox"
+                  [formControlName]="i"
+                  (click)="toggle(i)" />
                   <span class="checkmark"></span>
-                  Man
+                  {{checkBoxes[i].name}}
               </label>
-              <label class="container">
-                  <input type="checkbox" #women name="woman"
-                  (click)="toggle({woman: women.checked})"
-                  value="Women" [checked]="woman" />
-                  <span class="checkmark"></span>
-                  Women
-              </label>
-              <label class="container">
-                  <input type="checkbox" #child name="children"
-                  (click)="toggle({children: child.checked})"
-                  value="Children" [checked]="children" />
-                  <span class="checkmark"></span>
-                  Children
-              </label>
-          </div>
+          </form>
           <button 
             (click)="checkAll()"
             class="dashboard-button">

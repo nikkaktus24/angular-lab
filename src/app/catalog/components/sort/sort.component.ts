@@ -1,25 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import SortActions from '../../../shared/store/actions/sort';
-import { ISortState } from '../../../shared/models';
+import { ChangeKey } from './redux/actions';
+import { ISortState } from '../../../core/models';
 
 @Component({
   selector: 'app-sort',
   templateUrl: './sort.component.html',
-  styleUrls: ['./sort.component.scss'],
-  providers: [SortActions]
+  styleUrls: ['./sort.component.scss']
 })
-export class SortComponent implements OnInit {
+export class SortComponent {
 
   constructor(
     private store: Store<ISortState>,
-    private sortActions: SortActions,
   ) { }
 
   public change(payload: string): void {
-    this.store.dispatch(this.sortActions.changeKey(payload));
+    this.store.dispatch(new ChangeKey(payload));
   }
-
-  ngOnInit() { }
 
 }
