@@ -1,30 +1,12 @@
-<div *ngIf="dashBoard.man">
-    <div class="left-hr">Men</div>
-    <div class="items-wrapper">
-        <app-item 
-            *ngFor="let item of manItems" 
-            [name]="item.name" [price]="item.price"
-            [size]="item.size" [recources]="item.recources">
-        </app-item>
-    </div>
-</div>
-<div *ngIf="dashBoard.woman">
-    <div class="right-hr">Women</div>
-    <div class="items-wrapper">
-        <app-item 
-            *ngFor="let item of womanItems" 
-            [name]="item.name" [price]="item.price"
-            [size]="item.size" [recources]="item.recources">
-        </app-item>
-    </div>
-</div>
-<div *ngIf="dashBoard.children">
-    <div class="left-hr">Children</div>
-    <div class="items-wrapper">
-        <app-item 
-            *ngFor="let item of childItems" 
-            [name]="item.name" [price]="item.price"
-            [size]="item.size" [recources]="item.recources">
-        </app-item>
+<div *ngFor="let category of goodsCategories; let odd = odd">
+    <div *ngIf="dashBoard[category.name]">
+        <div [ngClass]="odd ? 'right-hr' : 'left-hr'">{{category.name}}</div>
+        <div class="items-wrapper">
+            <app-item 
+                *ngFor="let item of goods[category.name]" 
+                [name]="item.name" [price]="item.price"
+                [size]="item.size" [recources]="item.recources">
+            </app-item>
+        </div>
     </div>
 </div>

@@ -8,7 +8,7 @@ export class ToggleAction implements Action {
 
 export class CheckAllAction implements Action {
     readonly type = DASHBOARD.CHECKALL;
-    constructor(public payload: any[]) { }
+    constructor(public payload: any) { }
 }
 
 export type Actions

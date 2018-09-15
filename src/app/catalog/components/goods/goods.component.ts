@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Item, IItemsState } from '../../../core/models';
+import { categories } from '../../../core/config';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -14,11 +15,10 @@ export class GoodsComponent implements OnInit {
   @Input() sortKey$: Observable<string>;
   @Input() dashBoard: boolean;
   readonly items$: Observable<Item[]>;
+  readonly goodsCategories = categories;
 
   private items: Item[];
-  private manItems: Item[];
-  private womanItems: Item[];
-  private childItems: Item[];
+  private goods: any = {};
 
   constructor(
     private dataService: DataService,
@@ -33,10 +33,11 @@ export class GoodsComponent implements OnInit {
     });
 
     this.sortKey$.subscribe((newSortKey) => {
-      const {items} = this;
-      this.manItems = this.dataService.normalizeData(items, 'man', newSortKey, 1);
-      this.womanItems = this.dataService.normalizeData(items, 'woman', newSortKey, 1);
-      this.childItems = this.dataService.normalizeData(items, 'children', newSortKey, 1);
+      const {goodsCategories, items, goods} = this;
+      goodsCategories.forEach((item, i) => {
+        const {name} = item;
+        goods[name] = this.dataService.normalizeData(items, name, newSortKey, 1);
+      });
     });
 
   }
