@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
     const newCheckBoxesState = {};
     this.form.controls['checkBoxes'].setValue(
       this.form.controls['checkBoxes'].value
-          .map(value => true);
+          .map(value => true)
     );
     this.form.value.checkBoxes.forEach((item, i) => {
       const { name } = this.checkBoxes[i];

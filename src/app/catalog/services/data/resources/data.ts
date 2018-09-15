@@ -5,8 +5,20 @@ export const data = [
         size: 'fdsfsd',
         price: 60,
         recources: [
-            {url: 'src/app/catalog/services/data/resources/images/1.png', color: 'green' },
-            {url: 'src/app/catalog/services/data/resources/images/2.png', color: 'red' }
+            {urls: [
+                'src/app/catalog/services/data/resources/images/1.png',
+                'src/app/catalog/services/data/resources/images/1.png',
+                'src/app/catalog/services/data/resources/images/1.png',
+                'src/app/catalog/services/data/resources/images/1.png',
+                'src/app/catalog/services/data/resources/images/1.png',
+                'src/app/catalog/services/data/resources/images/1.png'
+            ]
+            , color: 'green' },
+            {urls: [
+                'src/app/catalog/services/data/resources/images/2.png',
+                'src/app/catalog/services/data/resources/images/2.png'
+            ]
+            , color: 'red' },
         ],
     },
     {
@@ -14,6 +26,6 @@ export const data = [
         sex: 'man',
         size: 'fdsfsd',
         price: 30,
-        recources: {url: 'src/app/catalog/services/data/resources/images/1.png', color: 'green' },
+        recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
 ];

@@ -1,4 +1,4 @@
-@import '../../../../styles/mixins';
+@import '../../../styles/mixins';
 
 .wrapper-logo {
     @include flexbox(row, center, center);

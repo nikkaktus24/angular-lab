@@ -1,16 +1,20 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData('de-DE');
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  styleUrls: ['./item.component.scss'],
 })
 export class ItemComponent implements OnInit {
   @Input() name;
   @Input() price;
   @Input() size;
   @Input() recources;
+
   private form: FormGroup;
 
   ngOnInit() {

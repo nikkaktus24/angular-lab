@@ -4,8 +4,8 @@
             <option value="">size</option>
             <option *ngFor="let item of size">{{item}}</option>
         </select>
-        <h4 *ngIf="!size.map">{{size}}</h4>
-        <form [formGroup]="form" *ngIf="recources.map">
+        <div *ngIf="!size.map">{{size}}</div>
+        <form [formGroup]="form" *ngIf="recources.length > 1">
             <input 
                 *ngFor="let item of recources; let isFirst = first"
                 [value]="item.color"
@@ -15,15 +15,14 @@
         </form>
     </header>
     <main>
-        <img *ngIf="!recources.map" [src]="recources.url" alt="{{recources.color}}" />
-        <div *ngIf="recources.map">
-            <div *ngFor="let item of recources;">
-                <img *ngIf="form.value.color === item.color" [src]="item.url" alt="{{item.color}}" /> 
+        <div *ngFor="let item of recources;">
+                <div *ngIf="form.value.color === item.color">
+                <app-carousel [urls]="item.urls" [color]="item.color"></app-carousel>
             </div>
         </div> 
     </main>
     <footer class="item-footer">
-        <h4>{{name}}</h4>
-        <div class="price">{{price}}</div>
+        <div>{{name}}</div>
+        <div class="price">{{price | currency:'EUR'}}</div>
     </footer>
 </div>

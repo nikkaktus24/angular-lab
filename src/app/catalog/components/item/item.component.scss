@@ -1,6 +1,6 @@
-@import '../../../../styles/mixins';
-@import '../../../../styles/variables';
-@import '../../../../styles/common';
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+@import '../../../styles/common';
 
 .item {
     @include flexbox(column, space-between, center);
@@ -39,10 +39,6 @@
 
     &-footer {
         @extend %item-style;
-
-        .price:after {
-            content: "€";
-        }
     }
 
 }
