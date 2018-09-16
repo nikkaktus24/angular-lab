@@ -1,3 +1,3 @@
 export enum SORT {
-    CHANGE = 'SORT_CHANGE',
+    SORTKEY_CHANGE = 'SORTKEY_CHANGE',
 }

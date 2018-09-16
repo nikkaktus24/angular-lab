@@ -1,0 +1,16 @@
+<div [ngClass]="odd ? 'right-hr' : 'left-hr'">{{name}}</div>
+<ngu-carousel class="carousel" #myCarousel [inputs]="carouselTile" [dataSource]="goods">
+    <ngu-tile *nguCarouselDef="let item; let i = index">
+        <app-item 
+          [name]="item.name" [price]="item.price"
+          [size]="item.size" [recources]="item.recources">
+        </app-item>
+    </ngu-tile>
+    <div [ngClass]="odd ? 'even-pages' : 'odd-pages'" NguCarouselPoint>
+        <span>{{myCarousel.activePoint+1}}</span>
+        <span>/</span>
+        <span>{{myCarousel.pointNumbers.length}}</span>
+    </div>
+    <button NguCarouselPrev [ngClass]="odd ? 'even-left-arrows' : 'odd-left-arrows'" [style.opacity]="myCarousel.isFirst ? 0.5:1"><i class="fa fa-chevron-left"></i></button>
+    <button NguCarouselNext [ngClass]="odd ? 'even-right-arrows' : 'odd-right-arrows'" [style.opacity]="myCarousel.isLast ? 0.5:1"><i class="fa fa-chevron-right"></i></button>
+</ngu-carousel>

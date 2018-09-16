@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoodsComponent } from './components/goods/goods.component';
 import { CarouselModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { CatalogRoutingModule } from './catalog-routing.module';
+import { CategoryComponent } from './containers/category/category.component';
+import { NguCarouselModule } from '@ngu/carousel';
 
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
@@ -25,7 +28,9 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
     ReactiveFormsModule,
     CarouselModule,
     WavesModule,
-    ButtonsModule
+    ButtonsModule,
+    NguCarouselModule,
+    CatalogRoutingModule
   ],
   declarations: [
     DashboardComponent,
@@ -33,7 +38,8 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
     SortComponent,
     ItemComponent,
     GoodsComponent,
-    CarouselComponent
+    CarouselComponent,
+    CategoryComponent
   ],
   exports: [
     CatalogComponent

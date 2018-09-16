@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { DataService } from '../../services/data/data.service';
@@ -13,6 +13,7 @@ import { PutItems } from './redux/actions';
 export class CatalogComponent implements OnInit {
   readonly dashboard$: Observable<boolean>;
   readonly sortKey$: Observable<string>;
+  readonly items$: Observable<Item[]>;
   private dashBoard: any;
 
   constructor(
@@ -21,6 +22,7 @@ export class CatalogComponent implements OnInit {
   ) {
     this.sortKey$ = this.store.select(state => state.sort.key);
     this.dashboard$ = this.store.pipe(select('dashBoard'));
+    this.items$ = this.store.pipe(select('catalog'));
   }
 
   public putItems(payload: Item[]): void {

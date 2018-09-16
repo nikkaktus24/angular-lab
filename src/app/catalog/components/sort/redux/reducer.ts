@@ -5,7 +5,7 @@ const defaultState: ISortKey = { key: 'price' };
 
 export function sortReducer(state: ISortKey = defaultState, action: any): any {
     switch (action.type) {
-        case SORT.CHANGE:
+        case SORT.SORTKEY_CHANGE:
             return {
                 ...state,
                 key: action.payload,

@@ -1,12 +1,5 @@
 <div *ngFor="let category of goodsCategories; let odd = odd">
     <div *ngIf="dashBoard[category.name]">
-        <div [ngClass]="odd ? 'right-hr' : 'left-hr'">{{category.name}}</div>
-        <div class="items-wrapper">
-            <app-item 
-                *ngFor="let item of goods[category.name]" 
-                [name]="item.name" [price]="item.price"
-                [size]="item.size" [recources]="item.recources">
-            </app-item>
-        </div>
+        <app-category [odd]="odd" [name]="category.name" [goods]="goods[category.name]"></app-category>
     </div>
 </div>

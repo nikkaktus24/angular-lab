@@ -15,18 +15,19 @@ export class DataService {
         return this.data;
     }
 
-    normalizeData(items: Item[], sex: string, sortKey: string, page: number): Item[] | any[] {
+    normalizeData(items: Item[], sex: string, sortKey: string, _page: number): Item[] | any[] {
         return items
         .filter((item: any) => {
             return item.sex === sex;
         })
         .sort((left: Item, right: Item) => {
             return left[sortKey] > right[sortKey] ? 1 : -1;
-        })
-        .filter((item: any, i: number, array: Item[]) => {
-            const limit = COUNT_ITEMS * page;
-            return (i >= limit - COUNT_ITEMS && i < limit);
         });
+        /*.filter((item: any, i: number) => {
+            const limit = COUNT_ITEMS * page;
+            console.log(limit);
+            return (i >= limit - COUNT_ITEMS && i < limit);
+        }); */
     }
 
 }
