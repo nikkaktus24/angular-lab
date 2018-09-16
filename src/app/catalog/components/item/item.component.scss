@@ -20,17 +20,8 @@
         @extend %item-style;
         
         input[type=radio] {
-            outline: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border: 0;
-            border-radius: 50px;
-            cursor: pointer;     
-            margin-right: 7px;
-
+            @extend %radio-style;
         }
-
         select {
                 @extend %select;
         }
@@ -43,9 +34,6 @@
 
 }
 
-%item-style {
-    @include flexbox(row, space-between, flex-start);
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px 20px 15px;
+.title {
+    cursor: pointer;
 }

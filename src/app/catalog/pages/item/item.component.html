@@ -1,0 +1,28 @@
+<app-header>
+    <div class="back">
+      <a class="back-link" (click)="back()">
+          <i class="fa fa-chevron-left"></i>
+          BACK TO CATALOG
+      </a>
+    </div>
+</app-header>
+<div class="left-hr">{{item.name}}</div>
+<div class="item">
+  <div class="item-images" *ngFor="let piece of item.recources;">
+      <div *ngIf="form.value.color === piece.color">
+          <app-carousel [urls]="piece.urls" [color]="piece.color"></app-carousel>
+      </div> 
+  </div>
+  <div class="item-info">
+    <div class="item-info-price">{{item.price | currency:'EUR'}}</div>
+    <form class="item-info-colors" [formGroup]="form" *ngIf="item.recources.length > 1">
+        <input 
+            *ngFor="let piece of item.recources; let isFirst = first"
+            [value]="piece.color"
+            [ngStyle]="{'background-color': piece.color}"
+            formControlName="color"
+            type="radio" />
+    </form>
+    <div class="item-info-sizes">{{item.size}}</div>
+  </div>
+</div>

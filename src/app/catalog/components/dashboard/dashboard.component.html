@@ -1,20 +1,17 @@
-<app-header>
-  <ng-container>
-      <div class="dashboard">
-        <form [formGroup]="form" class="dashboard-checkBoxes">
-              <label formArrayName="checkBoxes" *ngFor="let checkBox of form.controls.checkBoxes.controls; let i = index" class="container">
-                  <input type="checkbox"
-                  [formControlName]="i"
-                  (click)="toggle(i)" />
-                  <span class="checkmark"></span>
-                  {{checkBoxes[i].name}}
-              </label>
-          </form>
-          <button 
-            (click)="checkAll()"
-            class="dashboard-button">
-            See all products
-          </button>
-      </div>
-  </ng-container>
-</app-header>
+<div class="dashboard">
+    <form [formGroup]="form" class="dashboard-checkBoxes">
+        <label formArrayName="checkBoxes" *ngFor="let checkBox of form.controls.checkBoxes.controls; let i = index" class="container">
+            <input type="checkbox"
+            [formControlName]="i"
+            (click)="toggle(i)"
+            [checked]="dashBoard[checkBoxes[i].name]" />
+            <span class="checkmark"></span>
+            {{checkBoxes[i].name}}
+        </label>
+    </form>
+    <button 
+    (click)="checkAll()"
+    class="dashboard-button">
+    See all products
+    </button>
+</div>

@@ -2,6 +2,7 @@
 <ngu-carousel class="carousel" #myCarousel [inputs]="carouselTile" [dataSource]="goods">
     <ngu-tile *nguCarouselDef="let item; let i = index">
         <app-item 
+          [id]="item.id"
           [name]="item.name" [price]="item.price"
           [size]="item.size" [recources]="item.recources">
         </app-item>

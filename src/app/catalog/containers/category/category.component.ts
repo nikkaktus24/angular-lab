@@ -10,7 +10,8 @@ export class CategoryComponent {
   @Input() name;
   @Input() goods;
   @Input() odd;
-  public carouselTile = {
+
+  public carouselTile: NguCarouselConfig = {
     grid: { xs: 3, sm: 3, md: 3, lg: 3, all: 0 },
     slide: 3,
     speed: 250,
@@ -22,4 +23,5 @@ export class CategoryComponent {
     touch: false,
     easing: 'cubic-bezier(0, 0, 0.2, 1)'
   };
+
 }

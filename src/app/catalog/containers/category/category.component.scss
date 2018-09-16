@@ -1,5 +1,6 @@
 @import '../../../styles/mixins';
 @import '../../../styles/variables';
+@import '../../../styles/common';
 
 .carousel {
     width: 80%;
@@ -23,27 +24,6 @@
        @extend %pseudo-hr-style; 
        margin-right: 35px;
     }
-}
-
-%hr-style {
-    @include flexbox(row, center, center);
-    font-size: 15px;
-    color: $grey-font-color;
-    width: 1025px;
-    height: 10px;
-    margin: 20px auto 50px;
-}
-
-%pseudo-hr-style {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: #ccc;
-}
-
-%common-flex {
-    @include flexbox(row, space-between, center);
-    width: 30px;
 }
 
 .even-pages, .odd-pages {

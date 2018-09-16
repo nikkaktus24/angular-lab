@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../../core/models/';
-import { COUNT_ITEMS } from '../../../core/config';
 import { data } from './resources/data';
 
 
@@ -23,11 +22,12 @@ export class DataService {
         .sort((left: Item, right: Item) => {
             return left[sortKey] > right[sortKey] ? 1 : -1;
         });
-        /*.filter((item: any, i: number) => {
-            const limit = COUNT_ITEMS * page;
-            console.log(limit);
-            return (i >= limit - COUNT_ITEMS && i < limit);
-        }); */
+    }
+
+    getById(id: string) {
+        return this.data.filter((item) => {
+            return id === item.id;
+        })[0];
     }
 
 }

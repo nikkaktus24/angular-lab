@@ -1,5 +1,6 @@
 export const data = [
     {
+        id: '1',
         name: 'A',
         sex: 'man',
         size: 'fdsfsd',
@@ -22,6 +23,7 @@ export const data = [
         ],
     },
     {
+        id: '2',
         name: 'B',
         sex: 'man',
         size: 'fdsfsd',
@@ -29,6 +31,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '3',
         name: 'C',
         sex: 'man',
         size: 'fdsfsd',
@@ -36,6 +39,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '14',
         name: 'D',
         sex: 'man',
         size: 'fdsfsd',
@@ -43,6 +47,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '14',
         name: 'E',
         sex: 'man',
         size: 'fdsfsd',
@@ -50,6 +55,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '17',
         name: 'G',
         sex: 'man',
         size: 'fdsfsd',
@@ -57,6 +63,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '111',
         name: 'G',
         sex: 'woman',
         size: 'fdsfsd',
@@ -64,6 +71,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '123',
         name: 'G',
         sex: 'woman',
         size: 'fdsfsd',
@@ -71,6 +79,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '1657',
         name: 'G',
         sex: 'woman',
         size: 'fdsfsd',
@@ -78,6 +87,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '1667',
         name: 'G',
         sex: 'woman',
         size: 'fdsfsd',
@@ -85,6 +95,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '7711',
         name: 'G',
         sex: 'woman',
         size: 'fdsfsd',
@@ -92,6 +103,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '16436',
         name: 'G',
         sex: 'children',
         size: 'fdsfsd',
@@ -99,6 +111,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '186786',
         name: 'G',
         sex: 'children',
         size: 'fdsfsd',
@@ -106,6 +119,7 @@ export const data = [
         recources: [{urls: ['src/app/catalog/services/data/resources/images/1.png'], color: 'yellow'}],
     },
     {
+        id: '6546541',
         name: 'G',
         sex: 'children',
         size: 'fdsfsd',

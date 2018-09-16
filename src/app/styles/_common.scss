@@ -4,3 +4,42 @@
     background: none;
     font-size: 15px;
 }
+
+%hr-style {
+    @include flexbox(row, center, center);
+    font-size: 15px;
+    color: $grey-font-color;
+    width: 1025px;
+    height: 10px;
+    margin: 20px auto 50px;
+}
+
+%pseudo-hr-style {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+}
+
+%common-flex {
+    @include flexbox(row, space-between, center);
+    width: 30px;
+}
+
+%item-style {
+    @include flexbox(row, space-between, flex-start);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 20px 15px;
+}
+
+%radio-style {
+    outline: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;     
+    margin-right: 7px;
+}

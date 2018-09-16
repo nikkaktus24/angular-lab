@@ -28,7 +28,6 @@ export class GoodsComponent implements OnInit {
     });
 
     this.sortKey$.subscribe((newSortKey) => {
-      console.log(newSortKey);
       const {goodsCategories, items, goods} = this;
       goodsCategories.forEach((item) => {
         const {name} = item;

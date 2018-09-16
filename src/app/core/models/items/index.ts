@@ -1,5 +1,6 @@
 export class Item {
     constructor(
+        public id: string,
         public name: string,
         public sex: string,
         public size: any[] | string,

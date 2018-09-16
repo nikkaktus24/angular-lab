@@ -16,6 +16,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CatalogRoutingModule } from './catalog-routing.module';
 import { CategoryComponent } from './containers/category/category.component';
 import { NguCarouselModule } from '@ngu/carousel';
+import { ItemPageComponent } from './pages/item/item.component';
 
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
@@ -39,10 +40,12 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
     ItemComponent,
     GoodsComponent,
     CarouselComponent,
-    CategoryComponent
+    CategoryComponent,
+    ItemPageComponent
   ],
   exports: [
-    CatalogComponent
+    CatalogComponent,
+    ItemPageComponent
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr-FR' } ],
 })

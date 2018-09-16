@@ -16,13 +16,13 @@
     </header>
     <main>
         <div *ngFor="let item of recources;">
-                <div *ngIf="form.value.color === item.color">
+            <div *ngIf="form.value.color === item.color">
                 <app-carousel [urls]="item.urls" [color]="item.color"></app-carousel>
             </div>
         </div> 
     </main>
     <footer class="item-footer">
-        <div>{{name}}</div>
+        <div class="title" (click)="redirect()">{{name}}</div>
         <div class="price">{{price | currency:'EUR'}}</div>
     </footer>
 </div>
